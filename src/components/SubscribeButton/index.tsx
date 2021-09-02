@@ -20,7 +20,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 
         // create of checkout session
         try{
-            const response = await api.post('/subscribe');
+            const response = await api.post('/subscribe')
 
             const { sessionId } = response.data;
 
