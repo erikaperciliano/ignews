@@ -42,12 +42,12 @@ export const getStaticProps: GetStaticProps = async () => {
     const prismic = getPrismicClient();
 
     const response = await prismic.query([
-        Prismic.predicates.at('document.type', 'Post')
+        Prismic.predicates.at('document.type', 'post')
     ], {
-        fetch: ['Post.title', 'Post.content'],
+        fetch: ['post.title', 'post.content'],
         pageSize: 100,
     })
-
+    console.log('response: ', response)
     const posts = response.results.map(post => {
         return {
             slug: post.uid,
