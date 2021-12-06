@@ -7,7 +7,8 @@ import Link from "next/link";
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../../services/prismic";
 
-import styles from '../post.module.scss';
+// import styles from '../post.module.scss';
+import styles from './post.module.scss'
 
 interface PostPreviewProps {
     post: {

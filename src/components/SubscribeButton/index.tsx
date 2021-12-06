@@ -1,5 +1,5 @@
 import { Sinh } from 'faunadb';
-import { useSession } from 'next-auth/client';
+import { useSession, signIn } from 'next-auth/client';
 import { useRouter } from 'next/dist/client/router';
 import { api } from '../../services/api';
 import { getStripeJs } from '../../services/stripe-js';
@@ -16,7 +16,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 
     async function handleSubscribe(){
         if(!session) {
-            Sinh('github');
+            signIn('github');
             return;
         }
 
